@@ -30,7 +30,7 @@ fn SysTick() {
 }
 ```
 
-Como sabrá, usar variables `static mut` en una función la convierte en [*no reentrante.*] No está definido llamar a una función no reentrante, directa o indirectamente, desde más de un manejador de excepciones/interrupciones o desde `main` y uno o más manejadores de excepciones/interrupciones.
+Como sabrá, usar variables `static mut` en una función la convierte en [*no reentrante*](https://es.wikipedia.org/wiki/Reentrancia_(informática)). No está definido llamar a una función no reentrante, directa o indirectamente, desde más de un manejador de excepciones/interrupciones o desde `main` y uno o más manejadores de excepciones/interrupciones.
 
 Safe Rust nunca debe dar lugar a un comportamiento indefinido, por lo que las funciones no reentrantes
 deben marcarse como `unsafe`. Sin embargo, acabo de decir que los controladores de `exception` pueden utilizar con seguridad
